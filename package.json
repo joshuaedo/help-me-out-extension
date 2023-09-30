@@ -2,16 +2,16 @@
   "name": "help-me-out-extension",
   "version": "0.1.0",
   "private": true,
-"scripts": {
-        "dev": "next dev",
-        "dev:extension": "npm-watch",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "build:extension": "next build && next export && npm run lint:build",
-        "lint:build": "mv out/_next out/assets && sed -i 's/\\/_next/\\/assets/g' out/**.html",
-        "package": "npm run build:extension && zip -r packages/$(date -u +\"%Y-%m-%dT%H:%M:%SZ\").zip out"
-    },
+  "scripts": {
+    "dev": "next dev",
+    "dev:extension": "npm-watch",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:extension": "next build && next export && npm run lint:build",
+    "lint:build": "mv out/_next out/assets && sed -i 's/\\/_next/\\/assets/g' out/**.html",
+    "package": "npm run build:extension && zip -r packages/$(date -u +\"%Y-%m-%dT%H:%M:%SZ\").zip out"
+  },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.3",
