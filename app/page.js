@@ -70,16 +70,16 @@ export default function Home() {
           <img src="/icons/microphone.svg" alt="" />
           Audio
         </div>
-        <Switch className="" />
+        <Switch />
       </div>
       <Button
-        //     onClick={handleScreenRecord}
+        // onClick={handleScreenRecord}
         className="bg-[#120B48] text-white rounded-[12px]"
       >
         Start Recording
       </Button>
       <Button
-        //       onClick={stopScreenRecord}
+        // onClick={stopScreenRecord}
         disabled={!recording}
         className="bg-[#120B48] text-white rounded-[12px]"
       >
