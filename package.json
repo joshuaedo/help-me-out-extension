@@ -1,23 +1,35 @@
 {
-  "name": "help-me-out",
+  "name": "help-me-out-extension",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+"scripts": {
+        "dev": "next dev",
+        "dev:extension": "npm-watch",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "build:extension": "next build && next export && npm run lint:build",
+        "lint:build": "mv out/_next out/assets && sed -i 's/\\/_next/\\/assets/g' out/**.html",
+        "package": "npm run build:extension && zip -r packages/$(date -u +\"%Y-%m-%dT%H:%M:%SZ\").zip out"
+    },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-switch": "^1.0.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.279.0",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@types/chrome": "^0.0.246",
     "autoprefixer": "latest",
-    "postcss": "latest",
-    "tailwindcss": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest"
   }
 }
