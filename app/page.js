@@ -1,33 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { Switch } from "@/components/ui/Switch";
 
 export default function Home() {
   const [recording, setRecording] = useState(false);
 
-  useEffect(() => {
-    const handleScreenRecord = () => {
-      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        chrome.runtime.sendMessage({ name: "startRecording" });
-      });
-    };
-  }, [recording]);
+  const startRecording = () => {
+    chrome.runtime.sendMessage({ name: "startRecording" });
+    setRecording(true);
+  };
 
-  //const stopScreenRecord = async () => {
-  //  setRecording(false);
-  //  chrome.runtime.sendMessage({
-  //   type: 'recordingStopped',
-  // });
-  // };
-
-  // chrome.runtime.onMessage.addListener((message) => {
-  // if (message.type === 'recordingComplete') {
-  // The recording is complete
-  // Do something with the recorded video here, such as save it to the user's computer or upload it to a server
-  // }
-  //  });
+  const stopRecording = () => {
+    chrome.runtime.sendMessage({ name: "stopRecording" });
+    setRecording(false);
+  };
 
   return (
     <main className="w-[300px] h-[450px] px-[24px] pb-[20px] pt-[18px] inline-flex justify-center bg-transparent rounded-[32px] flex-col space-y-5 shadow-lg">
@@ -73,13 +61,13 @@ export default function Home() {
         <Switch />
       </div>
       <Button
-        // onClick={handleScreenRecord}
+       onClick={startRecording}
         className="bg-[#120B48] text-white rounded-[12px]"
       >
         Start Recording
       </Button>
       <Button
-        // onClick={stopScreenRecord}
+       onClick={stopRecording}
         disabled={!recording}
         className="bg-[#120B48] text-white rounded-[12px]"
       >
