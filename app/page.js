@@ -8,12 +8,12 @@ export default function Home() {
   const [recording, setRecording] = useState(false);
 
   const startRecording = () => {
-    chrome.runtime.sendMessage({ name: "startRecording" });
+    chrome.runtime.sendMessage({ action: "startRecording" });
     setRecording(true);
   };
 
   const stopRecording = () => {
-    chrome.runtime.sendMessage({ name: "stopRecording" });
+    chrome.runtime.sendMessage({ action: "stopRecording" });
     setRecording(false);
   };
 
