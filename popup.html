@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/output.css" />
+    <title>HelpMeOut</title>
+  </head>
+
+  <body class="bg-transparent rounded-[32px]">
+    <main
+      class="w-[300px] h-[450px] px-[24px] pb-[20px] pt-[18px] inline-flex justify-center bg-transparent rounded-[32px] flex-col space-y-5 shadow-lg"
+    >
+      <div class="flex items-center w-full justify-between">
+        <div class="flex items-center justify-between gap-2">
+          <img src="./icons/help_logo.svg" alt="HelpMeOut" /><span
+            class="text-[#120B48] font-bold text-base"
+            >HelpMeOut</span
+          >
+        </div>
+        <div class="flex items-center">
+          <button
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground h-10 p-2"
+          >
+            <img src="./icons/setting-2.svg" alt="settings" /></button
+          ><button
+            class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground h-10 p-2"
+          >
+            <img src="./icons/close-circle.svg" alt="close" />
+          </button>
+        </div>
+      </div>
+
+      <div class="text-[#120B48] font-normal text-sm">
+        This extension helps you record and share helpful videos with ease.
+      </div>
+
+      <div class="flex w-full items-center justify-evenly">
+        <button
+          class="items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground py-2 px-4 flex flex-col h-fit"
+        >
+          <img src="./icons/monitor.svg" alt="full screen" /><span
+            class="text-[#928FAB]"
+            >Full screen</span
+          ></button
+        ><button
+          class="items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-accent hover:text-accent-foreground py-2 px-4 flex flex-col h-fit"
+        >
+          <img src="./icons/tab.svg" alt="current tab" /><span
+            class="font-bold text-[#120B48]"
+            >Current Tab</span
+          >
+        </button>
+      </div>
+
+      <div
+        class="flex items-center justify-between text-sm font-semibold h-10 py-2 px-4 text-[#120B48] rounded-[8px] border-[1.5px] border-[#120B48]"
+      >
+        <div class="flex items-center gap-3">
+          <img src="./icons/video-camera.svg" alt="" />Camera
+        </div>
+        <button
+          type="button"
+          role="switch"
+          aria-checked="true"
+          data-state="checked"
+          value="on"
+          class="peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-[#120B48] data-[state=unchecked]:bg-[#928FAB] data-[state=unchecked]:border-[#928FAB]"
+        >
+          <span
+            data-state="checked"
+            class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
+          ></span>
+        </button>
+      </div>
+
+      <div
+        class="flex items-center justify-between text-sm font-semibold h-10 py-2 px-4 text-[#120B48] rounded-[8px] border-[1.5px] border-[#120B48]"
+      >
+        <div class="flex items-center gap-3">
+          <img src="./icons/microphone.svg" alt="" />Audio
+        </div>
+
+        <button
+          type="button"
+          role="switch"
+          aria-checked="true"
+          data-state="checked"
+          value="on"
+          class="peer inline-flex h-[24px] w-[44px] shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-[#120B48] data-[state=unchecked]:bg-[#928FAB] data-[state=unchecked]:border-[#928FAB]"
+        >
+          <span
+            data-state="checked"
+            class="pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0"
+          ></span>
+        </button>
+      </div>
+
+      <button
+        id="start_video"
+        class="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-primary/90 h-10 py-2 px-4 bg-[#120B48] text-white rounded-[12px]"
+      >
+        Start Recording
+      </button>
+
+      <button
+        id="stop_video"
+        class="inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background hover:bg-primary/90 h-10 py-2 px-4 bg-[#120B48] text-white rounded-[12px]"
+        disabled=""
+      >
+        Stop Recording
+      </button>
+    </main>
+
+    <script src="./js/popup.js"></script>
+  </body>
+</html>
